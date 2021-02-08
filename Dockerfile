@@ -66,12 +66,10 @@ RUN mv composer.phar /usr/local/bin/composer && \
 RUN command -v composer
 
 # Node.js
-RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
-RUN apt-get install nodejs -y
-# RUN npm install npm@6.13.0 -g
-RUN command -v node
-RUN command -v npm
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+ENV NVM_DIR="/root/.nvm"
+RUN . /root/.nvm/nvm.sh && nvm install node
+RUN . /root/.nvm/nvm.sh && nvm install 8
 
 # Other
 RUN mkdir ~/.ssh
@@ -80,5 +78,5 @@ RUN touch ~/.ssh_config
 # Display versions installed
 RUN php -v
 RUN composer --version
-RUN node -v
-RUN npm -v
+RUN . /root/.nvm/nvm.sh && nvm use node && node -v
+RUN . /root/.nvm/nvm.sh && nvm use node && npm -v
