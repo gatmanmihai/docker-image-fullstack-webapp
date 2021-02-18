@@ -68,7 +68,7 @@ RUN command -v composer
 # Node.js
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ENV NVM_DIR="/root/.nvm"
-RUN . /root/.nvm/nvm.sh && nvm install node
+RUN . /root/.nvm/nvm.sh && nvm install 14
 RUN . /root/.nvm/nvm.sh && nvm install 8
 
 # Other
