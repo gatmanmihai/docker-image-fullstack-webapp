@@ -50,7 +50,10 @@ RUN apt-get install -y \
     php7.4-intl \
     php7.4-imap \
     php7.4-imagick \
-    php-memcached
+    php7.4-memcached \
+    php7.4-mongodb \
+    php7.4-mcrypt \
+    php7.4-common
 RUN command -v php
 
 # Google Chrome
