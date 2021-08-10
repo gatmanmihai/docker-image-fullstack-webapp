@@ -19,6 +19,7 @@ RUN apt-get install -y \
     curl \
     rsync \
     ssh \
+    mysql-client \
     openssh-client \
     git \
     build-essential \
