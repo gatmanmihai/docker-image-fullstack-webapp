@@ -73,6 +73,7 @@ RUN command -v composer
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ENV NVM_DIR="/root/.nvm"
 RUN . /root/.nvm/nvm.sh && nvm install 14
+RUN . /root/.nvm/nvm.sh && nvm install 16
 RUN . /root/.nvm/nvm.sh && nvm install 8
 
 # Other
