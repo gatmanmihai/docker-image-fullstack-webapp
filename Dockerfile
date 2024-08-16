@@ -47,7 +47,6 @@ RUN apt-get install -y \
     php8.3-bz2 \
     php8.3-sqlite \
     php8.3-soap \
-    php8.3-json \
     php8.3-intl \
     php8.3-imap \
     php8.3-imagick \
