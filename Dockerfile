@@ -33,28 +33,28 @@ RUN apt-get install -y \
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 # PHP
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php7.4
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php8.3
 RUN apt-get install -y \
-    php7.4-curl \
-    php7.4-gd \
-    php7.4-dev \
-    php7.4-xml \
-    php7.4-bcmath \
-    php7.4-mysql \
-    php7.4-pgsql \
-    php7.4-mbstring \
-    php7.4-zip \
-    php7.4-bz2 \
-    php7.4-sqlite \
-    php7.4-soap \
-    php7.4-json \
-    php7.4-intl \
-    php7.4-imap \
-    php7.4-imagick \
-    php7.4-memcached \
-    php7.4-mongodb \
-    php7.4-mcrypt \
-    php7.4-common
+    php8.3-curl \
+    php8.3-gd \
+    php8.3-dev \
+    php8.3-xml \
+    php8.3-bcmath \
+    php8.3-mysql \
+    php8.3-pgsql \
+    php8.3-mbstring \
+    php8.3-zip \
+    php8.3-bz2 \
+    php8.3-sqlite \
+    php8.3-soap \
+    php8.3-json \
+    php8.3-intl \
+    php8.3-imap \
+    php8.3-imagick \
+    php8.3-memcached \
+    php8.3-mongodb \
+    php8.3-mcrypt \
+    php8.3-common
 RUN command -v php
 
 # Google Chrome
@@ -70,10 +70,11 @@ RUN mv composer.phar /usr/local/bin/composer && \
 RUN command -v composer
 
 # Node.js
-RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ENV NVM_DIR="/root/.nvm"
 RUN . /root/.nvm/nvm.sh && nvm install 14
 RUN . /root/.nvm/nvm.sh && nvm install 16
+RUN . /root/.nvm/nvm.sh && nvm install 20
 RUN . /root/.nvm/nvm.sh && nvm install 8
 
 # Other
